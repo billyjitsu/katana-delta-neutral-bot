@@ -10,7 +10,7 @@ this code base:
 | **WBTC carry** (`apps/wbtc`) | WBTC on Morpho, borrow vbUSDC, buy an extra WBTC slice, short that slice on BTC-USD | Live pilot | **~2.9–3.3% more BTC/yr** (funding minus borrow) |
 
 Price moves cancel out; the return is perp funding, ≈0.01%/8h ≈ 10.9% APR on the short notional
-through 2026. Yields are rough figures from a few weeks of small live pilots (November 2026), before
+through 2026. Yields are rough figures from small live pilots running since October 2026, before
 costs; they are not a promise of future returns.
 
 **Why Katana Perps for the hedge** (Mar 23 – Nov 18, 2026, ETH and BTC, from the public funding APIs
