@@ -1,0 +1,2 @@
+*.sh text eol=lf
+scripts/kdn text eol=lf

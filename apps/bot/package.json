@@ -1,0 +1,15 @@
+{
+  "name": "@kdn/bot",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Self-hosted tracker and (later) executor for the delta-neutral pilot.",
+  "exports": {
+    "./log": "./src/log.ts"
+  },
+  "dependencies": {
+    "@kdn/core": "*",
+    "@kdn/katana": "*",
+    "dotenv": "^18.0.8"
+  }
+}

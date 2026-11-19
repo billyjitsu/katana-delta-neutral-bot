@@ -1,0 +1,13 @@
+{
+  "name": "@kdn/wbtc",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "WBTC carry bot: Morpho collateral + borrowed slice hedged on BTC-USD. Earns funding, measured in BTC.",
+  "dependencies": {
+    "@kdn/bot": "*",
+    "@kdn/core": "*",
+    "@kdn/katana": "*",
+    "dotenv": "^18.0.8"
+  }
+}

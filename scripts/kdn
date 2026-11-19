@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+# Shortcut for root on the droplet: inspect and drive the bot that runs as the kdn user.
+#   kdn status          pm2 status of the bot
+#   kdn logs [n]        last n lines of the bot's console output (default 50)
+#   kdn follow          live console output (Ctrl+C to stop)
+#   kdn restart         restart the bot
+#   kdn <bot command>   e.g. kdn report, kdn costs, kdn rebalance, kdn rebalance --go
+#   kdn wbtc <command>  the WBTC carry bot in ~/wbtc, e.g. kdn wbtc report, kdn wbtc logs-pm2
+set -euo pipefail
+as_kdn() { sudo -iu kdn bash -lc "cd ~/app && $*"; }
+
+if [[ "${1:-}" == "wbtc" ]]; then
+  shift
+  as_wbtc() { sudo -iu kdn bash -lc "cd ~/wbtc && $*"; }
+  case "${1:-status}" in
+    status) as_wbtc "pm2 ls" ;;
+    logs-pm2) as_wbtc "pm2 logs kdn-wbtc --lines ${2:-50} --nostream" ;;
+    restart) as_wbtc "pm2 restart kdn-wbtc" ;;
+    *) as_wbtc "npm run -s wbtc -- $*" ;;
+  esac
+  exit
+fi
+
+case "${1:-status}" in
+  status) as_kdn "pm2 ls" ;;
+  logs) as_kdn "pm2 logs kdn-watch --lines ${2:-50} --nostream" ;;
+  follow) as_kdn "pm2 logs kdn-watch" ;;
+  restart) as_kdn "pm2 restart kdn-watch" ;;
+  *) as_kdn "npm run -s bot -- $*" ;;
+esac

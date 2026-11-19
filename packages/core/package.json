@@ -1,0 +1,8 @@
+{
+  "name": "@kdn/core",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Strategy math, risk rules and reporting. Pure functions only: no I/O, no native modules.",
+  "exports": "./src/index.ts"
+}

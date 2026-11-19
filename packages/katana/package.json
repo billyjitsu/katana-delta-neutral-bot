@@ -1,0 +1,17 @@
+{
+  "name": "@kdn/katana",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Katana Perps and Sushi V3 clients. Runtime-agnostic: no filesystem, no native modules.",
+  "exports": "./src/index.ts",
+  "dependencies": {
+    "@katanaperps/katana-perps-sdk": "^2.1.0",
+    "@kdn/core": "*",
+    "uuid": "^9.0.1",
+    "viem": "^2.57.8"
+  },
+  "devDependencies": {
+    "@types/uuid": "^9.0.8"
+  }
+}

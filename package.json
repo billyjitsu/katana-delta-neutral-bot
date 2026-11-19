@@ -1,0 +1,26 @@
+{
+  "name": "katana-delta-neutral",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "typecheck": "tsc -p .",
+    "test": "tsx --test packages/*/test/*.test.ts",
+    "bot": "tsx --disable-warning=ExperimentalWarning apps/bot/src/cli.ts",
+    "market": "tsx --disable-warning=ExperimentalWarning apps/bot/src/cli.ts market",
+    "snapshot": "tsx --disable-warning=ExperimentalWarning apps/bot/src/cli.ts snapshot",
+    "sync": "tsx --disable-warning=ExperimentalWarning apps/bot/src/cli.ts sync",
+    "report": "tsx --disable-warning=ExperimentalWarning apps/bot/src/cli.ts report",
+    "watch": "tsx --disable-warning=ExperimentalWarning apps/bot/src/cli.ts watch",
+    "wbtc": "tsx --disable-warning=ExperimentalWarning apps/wbtc/src/cli.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}
